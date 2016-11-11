@@ -7,6 +7,11 @@ The NodeBB comes with no plugins and the forum data is stored in a [Redis](http:
 The Redis is configured for [AOF persistence](http://redis.io/topics/persistence). 
 Not the fastest but the least chance for data loss on unexpected shutdowns.
 
+#### Components ####
+* NodeBB 1.x.x
+* Node.js 7.x
+* Redis 2.8.17 (latest on Debian repo)
+
 ### Usage
 The image exposes the port 4567/tcp to access NodeBB.
 
