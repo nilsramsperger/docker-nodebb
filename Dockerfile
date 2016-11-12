@@ -6,7 +6,9 @@ RUN apt-get update \
 RUN apt-get update \
     && apt-get install -y redis-server imagemagick git build-essential
 RUN cd /opt \
-    && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb
+    && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
+    && cd nodebb \
+    && git checkout -b v1.2.1 v1.2.1
 RUN mkdir -p /etc/nodebb
 ADD ./files/supervisor.sh /
 RUN chmod +x /supervisor.sh
