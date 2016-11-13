@@ -8,7 +8,7 @@ RUN apt-get update \
 RUN cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
     && cd nodebb \
-    && git checkout -b v1.3.0 v1.3.0
+    && git checkout -b v1.2.1 v1.2.1
 RUN mkdir -p /etc/nodebb
 ADD ./files/supervisor.sh /
 RUN chmod +x /supervisor.sh
