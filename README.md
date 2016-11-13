@@ -1,4 +1,4 @@
-# docker-nodebb
+# nilsramsperger/nodebb
 A simple Docker image for quick-launching a NodeBB forum.
 
 ## Description
@@ -8,10 +8,13 @@ The NodeBB comes with no plugins and the forum data is stored in a [Redis](http:
 The Redis is configured for [AOF persistence](http://redis.io/topics/persistence). 
 Not the fastest but the least chance for data loss on unexpected shutdowns.
 
-### Components ####
-* NodeBB 1.x.x
-* Node.js 7.x
-* Redis 2.8.17 (latest on Debian repo)
+### Tags ###
+* `latest`: NodeBB 1.2.1, Node.js 7.1.0, Redis 2.8.17
+* `v1.2.1`: NodeBB 1.2.1, Node.js 7.1.0, Redis 2.8.17
+* `dev`: the latest stuff
+
+Be advised, the `dev` tag might not be runnable. 
+Best stick to `latest` or a specific version tag.
 
 ## Setup
 Create the container
