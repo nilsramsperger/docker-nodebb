@@ -1,13 +1,9 @@
-FROM debian:latest
+FROM ubuntu:latest
 RUN apt-get update \
-    && apt-get install -y curl \
+    && apt-get install -y curl redis-server imagemagick wget\
     && curl -sL https://deb.nodesource.com/setup_7.x | bash - \
     && apt-get install -y nodejs
-RUN apt-get update \
-    && apt-get install -y redis-server imagemagick
-RUN apt-get update \
-    && apt-get install -y wget \
-    && cd /opt \
+RUN cd /opt \
     && wget https://github.com/NodeBB/NodeBB/archive/v1.3.0.tar.gz \
     && tar -zxvf v1.3.0.tar.gz \
     && rm v1.3.0.tar.gz \
