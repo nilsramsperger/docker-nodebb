@@ -13,7 +13,8 @@ ADD ./files/supervisor.sh /
 RUN chmod +x /supervisor.sh
 WORKDIR /opt/nodebb
 RUN npm install --production \
-    && npm install -g forever
+    && npm install -g forever \
+    && cp node_modules/socket.io-client/dist/socket.io.js node_modules/socket.io-client/socket.io.js
 RUN /etc/init.d/redis-server start \
     && sleep 5 \
     && redis-cli CONFIG SET save "" \
