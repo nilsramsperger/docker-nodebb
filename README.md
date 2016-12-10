@@ -8,7 +8,7 @@ The NodeBB comes with no plugins and the forum data is stored in a [Redis](http:
 The Redis is configured for [AOF persistence](http://redis.io/topics/persistence). 
 Not the fastest but the least chance for data loss on unexpected shutdowns.
 
-### Tags ###
+### Tags
 * `latest`: NodeBB 1.2.1, Node.js 7.1.0, Redis 2.8.17
 * `v1.2.1`: NodeBB 1.2.1, Node.js 7.1.0, Redis 2.8.17
 * `dev`: the latest stuff
@@ -19,13 +19,13 @@ Best stick to `latest` or a specific version tag.
 ## Setup
 Create the container
 
-`docker create --name myNodeBB -p 80:4567 -v nodebb-data:/var/lib/redis -v nodebb-files:/opt/nodebb/public/uploads -v nodebb-config:/etc/nodebb nilsramsperger/nodebb`
+`docker create --name myNodeBB -p 4567:4567 -v nodebb-data:/var/lib/redis -v nodebb-files:/opt/nodebb/public/uploads -v nodebb-config:/etc/nodebb nilsramsperger/nodebb`
 
 Start the container
 
 `docker start myNodeBB`
 
-In this case the container is bound to local port 80. 
+In this case the container is bound to local port 4567. 
 The name is set to myNodeBB. 
 The three volumes are linked to the named volumes `nodebb-data`, `nodebb-files` and `nodebb-config`. 
 Change things as you like.
@@ -34,6 +34,13 @@ On first run, NodeBB will start it's web installer interface.
 There you can create your admin account and set things up. 
 Just leave the database settings as they are.
 The `config.json` is created by the web installer and copied to `/etc/nodebb` when you shutdown the container after installing.
+So, restart the container after you completed the web installer.
+
+If you want to use the container on a public URL and an other port, you should edit the `config.json`.
+The full hostname and port must be placed there to get all links within NodeBB working correctly.
+
+From second run on, NodeBB will be started using [forever](https://github.com/foreverjs/forever).
+Thus NodeBB will be restarted, if it happens to shut down unexpectedly.
 
 ### Volumes
 * `/etc/nodebb` contains NodeBB's `config.json`
