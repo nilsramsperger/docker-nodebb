@@ -6,14 +6,13 @@ RUN apt-get update \
 RUN cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
     && cd nodebb \
-    && git checkout -b v1.2.1 v1.2.1 \
+    && git checkout -b v1.4.2 v1.4.2 \
     && rm -r .[!.]*
 RUN mkdir -p /etc/nodebb
 ADD ./files/supervisor.sh /
 RUN chmod +x /supervisor.sh
 WORKDIR /opt/nodebb
 RUN npm install --production \
-    && npm install -g forever \
     && cp node_modules/socket.io-client/dist/socket.io.js node_modules/socket.io-client/socket.io.js
 RUN /etc/init.d/redis-server start \
     && sleep 5 \
