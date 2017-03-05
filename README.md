@@ -9,7 +9,8 @@ The Redis is configured for [AOF persistence](http://redis.io/topics/persistence
 Not the fastest but the least chance for data loss on unexpected shutdowns.
 
 ### Tags
-* `latest`: NodeBB 1.2.1, Node.js 7.1.0, Redis 2.8.17
+* `latest`: NodeBB 1.4.4, Node.js 7.7.1, Redis 3.0.6
+* `v1.4.4`: NodeBB 1.4.4, Node.js 7.7.1, Redis 3.0.6
 * `v1.2.1`: NodeBB 1.2.1, Node.js 7.1.0, Redis 2.8.17
 * `dev`: the latest stuff
 
@@ -34,7 +35,7 @@ On first run, NodeBB will start it's web installer interface.
 There you can create your admin account and set things up. 
 Just leave the database settings as they are.
 The `config.json` is created by the web installer and copied to `/etc/nodebb` when you shutdown the container after installing.
-So, restart the container after you completed the web installer.
+So, restart the container after you completed the web installer (_You'll have a button called "Launch NodeBB" on screen, when setup is done_).
 
 If you want to use the container on a public URL and an other port, you should edit the `config.json`.
 The full hostname and port must be placed there to get all links within NodeBB working correctly.
@@ -48,6 +49,16 @@ Thus NodeBB will be restarted, if it happens to shut down unexpectedly.
 * `/opt/nodebb/public/uploads` contains NodeBB uploads like avatars
 
 ## Update to latest version
+
+### From 1.2.2 to 1.4.4
+Since I didn't get any NodeBB version of the 1.3.x running, the auto-update feature can't be used for this kind of update.
+You will have to do it the manual way. _Sorry for that._
+
+_tbd_
+
+### Any minor version increase by one
+_For example 1.4.4 to 1.5.0_
+
 If you want to update your NodeBB to the latest version, just stop and remove your current container.
 Then recreate it with the `create` command from the install section.
 On startup, the container will run a `nodebb upgrade` and thus prepare the database for the new version of NodeBB.
