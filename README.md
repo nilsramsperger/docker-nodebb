@@ -54,7 +54,21 @@ Thus NodeBB will be restarted, if it happens to shut down unexpectedly.
 Since I didn't get any NodeBB version of the 1.3.x running, the auto-update feature can't be used for this kind of update.
 You will have to do it the manual way. _Sorry for that._
 
-_tbd_
+* Backup the data volumes of your 1.2.2 container.
+* Connect to the NodeBB container with a Bash by `docker exec -it nodebb bash`.
+If your container isn't named `nodebb`, modify the command accordingly.
+* You should be in `/opt/nodebb`. 
+If not, do a `cd /opt/nodebb`.
+* Stop the NodeBB instance by `node nodebb stop`.
+Make sure all `node` processes are stoped, `ps -Al` helps.
+In case, `kill` all remaining `node` processes.
+* Get the latest NodeBB sources by `git fetch`
+* Check out the NodeBB 1.3.0 sources by `git checkout v1.3.0`
+* Let NodeBB upgrade the database by `node nodebb upgrade`.
+* Leave the container by `exit`.
+
+After these steps the container is at NodeBB 1.3.0 and you can do the automatic update to 1.4.4.
+Just procede with the next section.
 
 ### Any minor version increase by one
 _For example 1.4.4 to 1.5.0_

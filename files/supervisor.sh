@@ -10,6 +10,7 @@ term_handler() {
 
 trap 'kill ${!}; term_handler' SIGTERM
 
+[ -e /var/lib/redis/appendonly.aof ] && chown redis /var/lib/redis/appendonly.aof
 /etc/init.d/redis-server start
 [ -e /etc/nodebb/config.json ] && rm -f /opt/nodebb/config.json && ln -s /etc/nodebb/config.json /opt/nodebb/config.json
 cd /opt/nodebb/
