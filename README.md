@@ -10,6 +10,7 @@ Not the fastest but the least chance for data loss on unexpected shutdowns.
 
 ### Tags
 * `latest`: NodeBB 1.4.4, Node.js 7.7.1, Redis 3.0.6
+* `v1.4.5`: NodeBB 1.4.5, Node.js #, Redis #
 * `v1.4.4`: NodeBB 1.4.4, Node.js 7.7.1, Redis 3.0.6
 * `v1.2.1`: NodeBB 1.2.1, Node.js 7.1.0, Redis 2.8.17
 
