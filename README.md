@@ -12,7 +12,6 @@ Not the fastest but the least chance for data loss on unexpected shutdowns.
 * `latest`: NodeBB 1.4.4, Node.js 7.7.1, Redis 3.0.6
 * `v1.4.4`: NodeBB 1.4.4, Node.js 7.7.1, Redis 3.0.6
 * `v1.2.1`: NodeBB 1.2.1, Node.js 7.1.0, Redis 2.8.17
-* `dev`: the latest stuff
 
 Be advised, the `dev` tag might not be runnable. 
 Best stick to `latest` or a specific version tag.
@@ -39,9 +38,6 @@ So, restart the container after you completed the web installer (_You'll have a 
 
 If you want to use the container on a public URL and an other port, you should edit the `config.json`.
 The full hostname and port must be placed there to get all links within NodeBB working correctly.
-
-From second run on, NodeBB will be started using [forever](https://github.com/foreverjs/forever).
-Thus NodeBB will be restarted, if it happens to shut down unexpectedly.
 
 ### Volumes
 * `/etc/nodebb` contains NodeBB's `config.json`
