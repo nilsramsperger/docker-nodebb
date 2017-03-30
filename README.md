@@ -9,10 +9,10 @@ The Redis is configured for [AOF persistence](http://redis.io/topics/persistence
 Not the fastest but the least chance for data loss on unexpected shutdowns.
 
 ### Tags
-* `latest`: NodeBB 1.4.4, Node.js 7.7.1, Redis 3.0.6
-* `v1.4.5`: NodeBB 1.4.5, Node.js #, Redis #
-* `v1.4.4`: NodeBB 1.4.4, Node.js 7.7.1, Redis 3.0.6
-* `v1.2.1`: NodeBB 1.2.1, Node.js 7.1.0, Redis 2.8.17
+* `latest`
+* `v1.4.5`
+* `v1.4.4`
+* `v1.2.1`
 
 Be advised, the `dev` tag might not be runnable. 
 Best stick to `latest` or a specific version tag.
@@ -77,3 +77,7 @@ On startup, the container will run a `nodebb upgrade` and thus prepare the datab
 ## Backup and restore
 Save the contents of the three volumes for creating a backup. 
 To restore, copy the contents back.
+
+## Known issues
+* On shutdown after finishing the web-installer the `config.json` is not copied to `/etc/nodebb`.
+To compensate just start and stop the container once more.

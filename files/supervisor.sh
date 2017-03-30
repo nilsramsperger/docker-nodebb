@@ -3,7 +3,7 @@ set -x
 
 term_handler() {
     nodejs nodebb stop
-    [ -e /etc/nodebb/config.json ] || mv /opt/nodebb/config.json /etc/nodebb/
+    [ -e /etc/nodebb/config.json ] || cp /opt/nodebb/config.json /etc/nodebb/config.json
     /etc/init.d/redis-server stop
     exit 143;
 }
