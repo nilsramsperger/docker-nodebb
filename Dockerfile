@@ -6,7 +6,7 @@ RUN apt-get update \
 RUN cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
     && cd nodebb \
-    && git checkout -b v1.4.6 v1.4.6 \
+    && git checkout -b v1.5.0 v1.5.0 \
     && rm -r .[!.]*
 RUN mkdir -p /etc/nodebb
 ADD ./files/supervisor.sh /

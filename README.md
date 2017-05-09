@@ -10,6 +10,7 @@ Not the fastest but the least chance for data loss on unexpected shutdowns.
 
 ### Tags
 * `latest`
+* `v1.5.0`
 * `v1.4.6`
 * `v1.4.5`
 * `v1.4.4`
@@ -81,4 +82,4 @@ To restore, copy the contents back.
 
 ## Known issues
 * On shutdown after finishing the web-installer the `config.json` is not copied to `/etc/nodebb`.
-To compensate just start and stop the container once more.
+To compensate just stop and start the container once more.
