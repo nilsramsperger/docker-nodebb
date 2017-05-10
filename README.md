@@ -16,7 +16,7 @@ Not the fastest but the least chance for data loss on unexpected shutdowns.
 * `v1.4.4`
 * `v1.2.1`
 
-Be advised, the `dev` tag might not be runnable. 
+Be advised, any other tags are for experimental purpose and might not be runnable. 
 Best stick to `latest` or a specific version tag.
 
 ## Setup
