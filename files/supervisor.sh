@@ -1,10 +1,11 @@
-#!/usr/bin/env bash
-set -x
+#!/bin/bash
 
 term_handler() {
+    echo "Stopping"
     nodejs nodebb stop
     [ -e /etc/nodebb/config.json ] || cp /opt/nodebb/config.json /etc/nodebb/config.json
     /etc/init.d/redis-server stop
+    echo "Stopped"
     exit 143;
 }
 
