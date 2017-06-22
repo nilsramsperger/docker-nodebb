@@ -84,3 +84,13 @@ To restore, copy the contents back.
 ## Known issues
 * On shutdown after finishing the web-installer the `config.json` is not copied to `/etc/nodebb`.
 To compensate just stop and start the container once more.
+
+## Troubleshooting
+
+### Problem
+
+The NodeBB web-client notifies about broken web socket connections and tries to reestablish infinitely.
+ 
+### Solution
+
+The public URL and port in the `config.json` are not set correctly.
