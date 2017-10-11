@@ -10,6 +10,7 @@ Not the fastest but the least chance for data loss on unexpected shutdowns.
 
 ### Tags
 * `latest`
+* `v1.6.1`
 * `v1.6.0`
 * `v1.5.3`
 * `v1.5.2`
