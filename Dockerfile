@@ -8,8 +8,8 @@ RUN chmod +x /supervisor.sh \
     && cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
     && cd nodebb \
-    && git checkout -b v1.7.0 v1.7.0 \
-    && cp package.default.json package.json \
+    && git checkout -b v1.7.1 v1.7.1 \
+    && cp install/package.json package.json \
     && npm install --production \
     && rm -r .[!.]* \
     && mkdir -p /etc/nodebb \
@@ -24,6 +24,7 @@ RUN chmod +x /supervisor.sh \
     && apt-get autoremove -y \
     && apt-get autoclean -y \
     && apt-get purge -y
+ENV NODE_ENV=production
 WORKDIR /opt/nodebb
 EXPOSE 4567
 VOLUME ["/etc/nodebb", "/var/lib/redis", "/opt/nodebb/public/uploads"]
