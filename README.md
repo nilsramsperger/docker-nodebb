@@ -29,7 +29,7 @@ Best stick to `latest` or a specific version tag.
 ## Setup
 Create the container
 
-`docker create --name myNodeBB --restart always -p 4567:4567 -e url="http://127.0.0.1:4567" -v nodebb-data:/var/lib/redis -v nodebb-files:/opt/nodebb/public/uploads -v nodebb-config:/etc/nodebb nilsramsperger/nodebb`
+`docker create --name myNodeBB --init --restart always -p 4567:4567 -e url="http://127.0.0.1:4567" -v nodebb-data:/var/lib/redis -v nodebb-files:/opt/nodebb/public/uploads -v nodebb-config:/etc/nodebb nilsramsperger/nodebb`
 
 In this case the container named `myNodeBB` and is bound to local port 4567.
 The container's public url is set to `http://127.0.0.1:4567`.
