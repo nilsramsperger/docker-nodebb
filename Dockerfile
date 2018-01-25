@@ -2,13 +2,13 @@ FROM ubuntu:latest
 ADD ./files/supervisor.sh /
 RUN chmod +x /supervisor.sh \
     && apt-get update \
-    && apt-get install -y curl redis-server imagemagick git\
+    && apt-get install -y --no-install-recommends curl ca-certificates redis-server imagemagick git\
     && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     && apt-get install -y nodejs \
     && cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
     && cd nodebb \
-    && git checkout -b v1.7.3 v1.7.3 \
+    && git checkout -b v1.7.4 v1.7.4 \
     && cp install/package.json package.json \
     && npm install --production \
     && rm -r .[!.]* \
@@ -23,7 +23,8 @@ RUN chmod +x /supervisor.sh \
     && apt-get remove -y curl git \
     && apt-get autoremove -y \
     && apt-get autoclean -y \
-    && apt-get purge -y
+    && apt-get purge -y \
+    && rm -rf /var/lib/apt/lists/*
 ENV NODE_ENV=production
 WORKDIR /opt/nodebb
 EXPOSE 4567
