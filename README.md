@@ -10,6 +10,7 @@ Not the fastest but the least chance for data loss on unexpected shutdowns.
 
 ### Tags
 * `latest`
+* `v1.7.5`
 * `v1.7.4`
 * `v1.7.3`
 * `v1.7.2`
@@ -66,6 +67,10 @@ On startup, the container will run a `nodebb upgrade` and thus prepare the datab
 ## Backup and restore
 Save the contents of the three volumes for creating a backup. 
 To restore, copy the contents back.
+
+## Restarting
+Since NodeBB is started via the `app.js`, restarting from admin panel is disabled.
+If you want to, just restart the container.
 
 ## Troubleshooting
 
