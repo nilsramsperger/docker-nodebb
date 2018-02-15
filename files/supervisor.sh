@@ -21,6 +21,6 @@ trap term_handler SIGTERM
 [ -e /etc/nodebb/config.json ] && rm -f /opt/nodebb/config.json && ln -s /etc/nodebb/config.json /opt/nodebb/config.json
 cd /opt/nodebb/
 [ -e /etc/nodebb/config.json ] && nodejs nodebb upgrade
-nodejs nodebb start & wait ${!}
+nodejs app.js & wait ${!}
 echo "NodeBB died"
 shutdown
