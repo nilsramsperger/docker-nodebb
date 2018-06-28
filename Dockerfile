@@ -8,7 +8,7 @@ RUN chmod +x /supervisor.sh \
     && cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
     && cd nodebb \
-    && git checkout -b v1.9.3 v1.9.3 \
+    && git checkout -b v1.10.0 v1.10.0 \
     && cp install/package.json package.json \
     && npm install --production \
     && rm -r .[!.]* \
