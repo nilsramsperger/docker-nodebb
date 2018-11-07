@@ -20,7 +20,7 @@ trap term_handler SIGTERM
 /etc/init.d/redis-server start
 [ -e /etc/nodebb/config.json ] && rm -f /opt/nodebb/config.json && ln -s /etc/nodebb/config.json /opt/nodebb/config.json
 cd /opt/nodebb/
-[ -e /etc/nodebb/config.json ] && nodejs nodebb upgrade
+[ -e /etc/nodebb/config.json ] && yes n | nodejs nodebb upgrade
 nodejs app.js & wait ${!}
 echo "NodeBB died"
 shutdown
