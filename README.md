@@ -10,6 +10,7 @@ Not the fastest but the least chance for data loss on unexpected shutdowns.
 
 ### Tags
 * `latest`
+* `v1.11.1`
 * `v1.11.0`
 * `v1.10.2`
 * `v1.10.1`
@@ -18,25 +19,7 @@ Not the fastest but the least chance for data loss on unexpected shutdowns.
 * `v1.9.2`
 * `v1.9.1`
 * `v1.9.0`
-* `v1.8.2`
-* `v1.8.1`
-* `v1.8.0`
-* `v1.7.5`
-* `v1.7.4`
-* `v1.7.3`
-* `v1.7.2`
-* `v1.7.1`
-* `v1.7.0`
-* `v1.6.1`
-* `v1.6.0`
-* `v1.5.3`
-* `v1.5.2`
-* `v1.5.1`
-* `v1.5.0`
-* `v1.4.6`
-* `v1.4.5`
-* `v1.4.4`
-* `v1.2.1`
+* several older versions
 
 Be advised, any other tags are for experimental purpose and might not be runnable. 
 Best stick to `latest` or a specific version tag.
