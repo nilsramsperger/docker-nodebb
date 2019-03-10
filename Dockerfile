@@ -1,7 +1,9 @@
 FROM node:8-alpine
 ADD ./files/supervisor.sh /
+ADD ./files/redis /etc/init.d/
 RUN chmod +x /supervisor.sh \
-    && apk add --no-cache redis git sed \
+    && chmod +x /etc/init.d/redis \
+    && apk add --no-cache redis git sed openrc \
     && chmod 777 /var/lib/redis \
     && cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
