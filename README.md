@@ -77,3 +77,13 @@ The NodeBB web-client notifies about broken web socket connections and tries to 
 
 The public URL and port in the `config.json` are not set correctly.
 When creating the container, you can set the public URL via `-e url="http://127.0.0.1:4567"`.
+
+### Problem
+
+The web installer tells the database connection cannot be established and/or the container is restarting infinitely.
+
+### Solution
+
+May be you are using preexisting named volumes or host volumes. 
+If so, make sure redis can access them.
+Anyway, fresh named volumes is the preferred way.
