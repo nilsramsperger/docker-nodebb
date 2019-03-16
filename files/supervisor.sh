@@ -17,7 +17,7 @@ term_handler() {
 trap term_handler SIGTERM
 
 [ -e /var/lib/redis/appendonly.aof ] && chown redis /var/lib/redis/appendonly.aof
-redis-server&
+redis-server --daemonize yes
 PID=$!
 [ -e /etc/nodebb/config.json ] && rm -f /opt/nodebb/config.json && ln -s /etc/nodebb/config.json /opt/nodebb/config.json
 cd /opt/nodebb/

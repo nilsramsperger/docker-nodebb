@@ -1,6 +1,0 @@
-#!/sbin/openrc-run
-
-command="redis-server"
-command_user="redis"
-pidfile="/run/$RC_SVCNAME/$RC_SVCNAME.pid"
-command_background="yes"
