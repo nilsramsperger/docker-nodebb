@@ -70,6 +70,7 @@ If you want to, just restart the container.
 ## Support my work
 You like this project and want to support my work?
 Feel free to spend a pint or two.
+
 [![paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/NilsRamsperger)
 
 ## Troubleshooting
