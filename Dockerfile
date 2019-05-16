@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:10-alpine
 ADD ./files/supervisor.sh /
 RUN chmod +x /supervisor.sh \
     && apk add --no-cache redis git sed \
@@ -6,7 +6,7 @@ RUN chmod +x /supervisor.sh \
     && cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
     && cd nodebb \
-    && git checkout -b v1.12.1 v1.12.1 \
+    && git checkout -b v1.12.2 v1.12.2 \
     && cp install/package.json package.json \
     && npm install --production \
     && rm -r .[!.]* \
