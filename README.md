@@ -50,15 +50,15 @@ The restart must be done manually.
 * `/var/lib/redis` contains the Redis data
 * `/opt/nodebb/public/uploads` contains NodeBB uploads like avatars
 
-## Update to latest version
-
-If you want to update your NodeBB to the latest version, just stop and remove your current container.
-Then recreate it with the `create` command from the install section.
-On startup, the container will run a `nodebb upgrade` and thus prepare the database for the new version of NodeBB.
-
 ## Backup and restore
 Save the contents of the three volumes for creating a backup. 
 To restore, copy the contents back.
+
+## Update to latest version
+If you want to update your NodeBB to the latest version, make backups of the volumes first.
+After that just stop and remove your current container.
+Then recreate it with the `create` command from the install section.
+On startup, the container will run a `nodebb upgrade` and thus prepare the database for the new version of NodeBB.
 
 ## Restarting
 Since NodeBB is started via the `app.js`, restarting from admin panel is disabled.
@@ -90,3 +90,16 @@ The web installer tells the database connection cannot be established and/or the
 May be you are using preexisting named volumes or host volumes. 
 If so, make sure redis can access them.
 Anyway, fresh named volumes is the preferred way.
+
+### Problem
+
+Something went wrong while updating to a newer version of NodeBB.
+Now the forum is broken.
+
+### Solution
+
+* Delete the container.
+* Restore the volumes, using the backups you created before updating.
+* Create a new container using the `create` command from the install section with a fixed image version.
+  * Append the version number of the previously used image to the image name.
+  * For example: `nilsramsperger/nodebb:v1.13.0`
