@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:12-alpine AS build
 RUN apk add --no-cache redis git sed \
     && cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
@@ -17,8 +17,8 @@ RUN chmod +x /supervisor.sh \
     && apk add --no-cache redis \
     && mkdir -p /etc/nodebb \
     && chmod 777 /var/lib/redis
-COPY --from=0 /etc/redis.conf /etc
-COPY --from=0 /opt/nodebb /opt/nodebb
+COPY --from=build /etc/redis.conf /etc
+COPY --from=build /opt/nodebb /opt/nodebb
 ENV NODE_ENV=production
 WORKDIR /opt/nodebb
 EXPOSE 4567
