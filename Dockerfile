@@ -1,20 +1,24 @@
 FROM node:12-alpine
-ADD ./files/supervisor.sh /
-RUN chmod +x /supervisor.sh \
-    && apk add --no-cache redis git sed \
-    && chmod 777 /var/lib/redis \
+RUN apk add --no-cache redis git sed \
     && cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
     && cd nodebb \
     && git checkout -b v1.13.1 v1.13.1 \
     && cp install/package.json package.json \
     && npm install --production \
-    && rm -r .[!.]* \
-    && mkdir -p /etc/nodebb \
     && sed -i '1 idaemonize yes' /etc/redis.conf \
     && sed -i 's/bind 127.0.0.1 ::1/bind 127.0.0.1/' /etc/redis.conf \
     && sed -i 's/appendonly no/appendonly yes/' /etc/redis.conf \
     && sed -i '/save */d' /etc/redis.conf
+
+FROM node:12-alpine
+ADD ./files/supervisor.sh /
+RUN chmod +x /supervisor.sh \
+    && apk add --no-cache redis \
+    && mkdir -p /etc/nodebb \
+    && chmod 777 /var/lib/redis
+COPY --from=0 /etc/redis.conf /etc
+COPY --from=0 /opt/nodebb /opt/nodebb
 ENV NODE_ENV=production
 WORKDIR /opt/nodebb
 EXPOSE 4567
