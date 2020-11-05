@@ -1,4 +1,4 @@
-FROM node:12-alpine AS build
+FROM node:14-alpine AS build
 RUN apk add --no-cache redis git sed \
     && cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
@@ -11,7 +11,7 @@ RUN apk add --no-cache redis git sed \
     && sed -i 's/appendonly no/appendonly yes/' /etc/redis.conf \
     && sed -i '/save */d' /etc/redis.conf
 
-FROM node:12-alpine
+FROM node:14-alpine
 ADD ./files/supervisor.sh /
 RUN chmod +x /supervisor.sh \
     && apk add --no-cache redis \
