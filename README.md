@@ -65,6 +65,9 @@ On startup, the container will run a `nodebb upgrade` and thus prepare the datab
 Since NodeBB is started via the `app.js`, restarting from admin panel is disabled.
 If you want to, just restart the container.
 
+## Update notifications
+If you want to stay informed about fresh releases, I post about them on my Twitter @nilsramsperger.
+
 ## Support my work
 You like this project and want to support my work?
 Feel free to spend a pint or two.
