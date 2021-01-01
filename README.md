@@ -110,9 +110,14 @@ Now the forum is broken.
 
 ### Problem
 
-[Invalid-Event when switching editor to quill.](https://community.nodebb.org/topic/15233/cannot-write-post-or-reply-after-1-15-1-16/4)
+NodeBB shows an "invalid-event" error after performing updates and installation of the quill editor plugin.
+An example is documented here:
+* [Invalid-Event when switching editor to quill.](https://community.nodebb.org/topic/15233/cannot-write-post-or-reply-after-1-15-1-16/4)
+* [Followup pull request](https://github.com/nilsramsperger/docker-nodebb/pull/10)
 
 ### Solution
 
-Make sure only quill **or** markdown and default composer are active. Rebuild Nodebb and then restart the container:
-  * `docker restart MyNodeBB`
+It is not quite sure, what actually caused the problem. 
+The following actions solved the issue:
+* Make sure only quill **or** markdown and default composer are active.
+* Restart server and container 
