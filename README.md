@@ -107,3 +107,12 @@ Now the forum is broken.
 * Create a new container using the `create` command from the install section with a fixed image version.
   * Append the version number of the previously used image to the image name.
   * For example: `nilsramsperger/nodebb:v1.13.0`
+
+### Problem
+
+[Invalid-Event when switching editor to quill.](https://community.nodebb.org/topic/15233/cannot-write-post-or-reply-after-1-15-1-16/4)
+
+### Solution
+
+Make sure only quill **or** markdown and default composer are active. Rebuild Nodebb and then restart the container:
+  * `docker restart MyNodeBB`
