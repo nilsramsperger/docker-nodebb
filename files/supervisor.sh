@@ -13,6 +13,17 @@ term_handler() {
     shutdown
 }
 
+set_timezone() {
+    if [ ! -z $TIMEZONE ]
+    then
+        echo "Setting timezone"
+        apk add tzdata;
+        cp /usr/share/zoneinfo/"$TIMEZONE" /etc/localtime;
+        echo $TIMEZONE > /etc/timezone;
+        apk del tzdata;
+    fi
+}
+
 trap term_handler SIGTERM
 
 [ -e /var/lib/redis/appendonly.aof ] && chown redis /var/lib/redis/appendonly.aof
@@ -20,6 +31,7 @@ redis-server /etc/redis.conf
 [ -e /etc/nodebb/config.json ] && rm -f /opt/nodebb/config.json && ln -s /etc/nodebb/config.json /opt/nodebb/config.json
 cd /opt/nodebb/
 [ -e /etc/nodebb/config.json ] && yes n | node nodebb upgrade
+set_timezone
 node app.js & wait ${!}
 echo "NodeBB died"
 shutdown

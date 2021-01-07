@@ -47,6 +47,11 @@ The container will restart and the browser switch to the forum.
 If an image of version 1.5.x or less is used, the container will not restart on "Launch NodeBB".
 The restart must be done manually.
 
+### Timezone
+Per default, the container uses UTC as timezone.
+If you want to specify a different timezone, add `TIMEZONE` as ENV on container creation.
+Example: `-e TIMEZONE=Europe/Brussels`
+
 ### Volumes
 * `/etc/nodebb` contains NodeBB's `config.json`
 * `/var/lib/redis` contains the Redis data
