@@ -47,10 +47,18 @@ The container will restart and the browser switch to the forum.
 If an image of version 1.5.x or less is used, the container will not restart on "Launch NodeBB".
 The restart must be done manually.
 
-### Timezone
+### Environment Variables
+#### Public URL
+If your NodeBB forum is accessable via a public URL, it needs to be told abut that.
+Otherwise some features might break.
+WebSockets for example.
+Tell NodeBB about it's public URL by setting the `url` environment variable on container creation.
+Example: `-e url=https://www.myforum.com:8080`
+
+#### Timezone
 Per default, the container uses UTC as timezone.
-If you want to specify a different timezone, add `TIMEZONE` as ENV on container creation.
-Example: `-e TIMEZONE=Europe/Brussels`
+If you want to specify a different timezone, add `timezone` as ENV on container creation.
+Example: `-e timezone=Europe/Brussels`
 
 ### Volumes
 * `/etc/nodebb` contains NodeBB's `config.json`
