@@ -49,7 +49,7 @@ The restart must be done manually.
 
 ### Environment Variables
 #### Public URL
-If your NodeBB forum is accessable via a public URL, it needs to be told abut that.
+If your NodeBB forum is accessable via a public URL, it needs to be told about that.
 Otherwise some features might break.
 WebSockets for example.
 Tell NodeBB about it's public URL by setting the `url` environment variable on container creation.
