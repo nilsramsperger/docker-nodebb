@@ -14,12 +14,12 @@ term_handler() {
 }
 
 set_timezone() {
-    if [ ! -z $TIMEZONE ]
+    if [ ! -z $timezone ]
     then
         echo "Setting timezone"
         apk add tzdata;
-        cp /usr/share/zoneinfo/"$TIMEZONE" /etc/localtime;
-        echo $TIMEZONE > /etc/timezone;
+        cp /usr/share/zoneinfo/"$timezone" /etc/localtime;
+        echo $timezone > /etc/timezone;
         apk del tzdata;
     fi
 }
