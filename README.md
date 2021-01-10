@@ -1,7 +1,8 @@
 # nilsramsperger/nodebb
-[![twitter](https://img.shields.io/twitter/follow/nilsramsperger)](https://twitter.com/nilsramsperger)
+[![twitter](https://img.shields.io/twitter/follow/nilsramsperger?label=%40nilsramsperger%20on%20Twitter&style=plastic)](https://twitter.com/nilsramsperger)
 [![dockerhub](https://img.shields.io/docker/pulls/nilsramsperger/nodebb?label=Docker%20pulls)](https://hub.docker.com/r/nilsramsperger/nodebb)
 [![paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/NilsRamsperger)
+
 A simple Docker image for quick-launching a NodeBB forum.
 
 ## Description
