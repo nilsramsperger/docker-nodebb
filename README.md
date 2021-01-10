@@ -1,4 +1,7 @@
 # nilsramsperger/nodebb
+[![twitter](https://img.shields.io/twitter/follow/nilsramsperger)](https://twitter.com/nilsramsperger)
+[![dockerhub](https://img.shields.io/docker/pulls/nilsramsperger/nodebb?label=Docker%20pulls)](https://hub.docker.com/r/nilsramsperger/nodebb)
+[![paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/NilsRamsperger)
 A simple Docker image for quick-launching a NodeBB forum.
 
 ## Description
@@ -81,12 +84,6 @@ If you want to, just restart the container.
 
 ## Update notifications
 If you want to stay informed about fresh releases, I post about them on my Twitter @nilsramsperger.
-
-## Support my work
-You like this project and want to support my work?
-Feel free to spend a pint or two.
-
-[![paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/NilsRamsperger)
 
 ## Troubleshooting
 
