@@ -3,7 +3,7 @@ RUN apk add --no-cache redis git sed \
     && cd /opt \
     && git clone -b v1.x.x https://github.com/NodeBB/NodeBB.git nodebb \
     && cd nodebb \
-    && git checkout -b v1.17.0 v1.17.0 \
+    && git checkout -b v1.17.1 v1.17.1 \
     && cp install/package.json package.json \
     && npm install --production \
     && sed -i '1 idaemonize yes' /etc/redis.conf \

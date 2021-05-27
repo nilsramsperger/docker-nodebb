@@ -14,18 +14,11 @@ Not the fastest but the least chance for data loss on unexpected shutdowns.
 
 ### Tags
 * `latest`
+* `v1.17.1`
 * `v1.17.0`
 * `v1.16.2`
 * `v1.16.1`
 * `v1.16.0`
-* `v1.15.5`
-* `v1.15.4`
-* `v1.15.3`
-* `v1.15.2`
-* `v1.15.1`
-* `v1.14.3`
-* `v1.14.2`
-* `v1.14.1`
 * several older versions
 
 Be advised, any other tags are for experimental purpose and might not be runnable. 
