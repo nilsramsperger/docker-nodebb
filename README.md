@@ -5,6 +5,9 @@
 
 A simple Docker image for quick-launching a NodeBB forum.
 
+## Deprecated
+This repo was relocated to [GitLab](https://gitlab.com/nilsramsperger/docker-nodebb)
+
 ## Description
 This repo contains the files for the automatic build of the Docker image `nilsramsperger/nodebb` hosted on [DockerHub](https://hub.docker.com/r/nilsramsperger/nodebb/).
 
